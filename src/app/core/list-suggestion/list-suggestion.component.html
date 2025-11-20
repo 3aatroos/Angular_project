@@ -1,0 +1,43 @@
+<div class="container">
+  <h2>Liste des Suggestions</h2>
+<!-- Top Navbar -->
+<nav class="top-nav">
+  <button routerLink="/" class="nav-btn">Accueil</button>
+</nav>
+  <!-- Search Bar -->
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Rechercher par titre ou catégorie" class="search-input" />
+
+  <div class="cards-container">
+    <div *ngFor="let s of filteredSuggestions" class="suggestion-card">
+      <div class="card-header">
+        <h3>{{ s.title }}</h3>
+        <span class="status" [ngClass]="{
+          'accepted': s.status === 'acceptee',
+          'refused': s.status === 'refusee',
+          'pending': s.status === 'en_attente'
+        }">{{ s.status }}</span>
+      </div>
+      <p class="description">{{ s.description }}</p>
+      <div class="card-footer">
+        <span class="category">{{ s.category }}</span>
+        <span class="date">{{ s.date | date:'yyyy-MM-dd' }}</span>
+      </div>
+      <div class="card-actions">
+        <button *ngIf="s.status !== 'refusee'" (click)="likeSuggestion(s)" class="btn like-btn">
+          Like ({{ s.likes }})
+        </button>
+        <button *ngIf="s.status !== 'refusee'" (click)="addToFavorites(s)" [disabled]="s.favorite" class="btn fav-btn">
+          {{ s.favorite ? 'Favori ajouté' : 'Ajouter aux favoris' }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Favorites list -->
+  <div class="favorites">
+    <h3>Favorites:</h3>
+    <ul>
+      <li *ngFor="let f of favorites">{{ f.title }}</li>
+    </ul>
+  </div>
+</div>
