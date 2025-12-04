@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.angular",
+    "\\.angular\\cache",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\core",
+    "\\src\\app\\home",
+    "\\src\\app\\models"
+  ],
+  "SelectedNode": "\\.angular\\cache",
+  "PreviewInSolutionExplorer": false
+}

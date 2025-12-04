@@ -1,9 +1,6 @@
 <div class="container">
   <h2>Liste des Suggestions</h2>
-<!-- Top Navbar -->
-<nav class="top-nav">
-  <button routerLink="/" class="nav-btn">Accueil</button>
-</nav>
+
   <!-- Search Bar -->
   <input type="text" [(ngModel)]="searchTerm" placeholder="Rechercher par titre ou catégorie" class="search-input" />
 
@@ -23,13 +20,20 @@
         <span class="date">{{ s.date | date:'yyyy-MM-dd' }}</span>
       </div>
       <div class="card-actions">
-        <button *ngIf="s.status !== 'refusee'" (click)="likeSuggestion(s)" class="btn like-btn">
-          Like ({{ s.likes }})
-        </button>
-        <button *ngIf="s.status !== 'refusee'" (click)="addToFavorites(s)" [disabled]="s.favorite" class="btn fav-btn">
-          {{ s.favorite ? 'Favori ajouté' : 'Ajouter aux favoris' }}
-        </button>
-      </div>
+  <button *ngIf="s.status !== 'refusee'" (click)="likeSuggestion(s)" class="btn like-btn">
+    Like ({{ s.likes }})
+  </button>
+  <button *ngIf="s.status !== 'refusee'" (click)="addToFavorites(s)" [disabled]="s.favorite" class="btn fav-btn">
+    {{ s.favorite ? 'Favori ajouté' : 'Ajouter aux favoris' }}
+  </button>
+
+  <!-- Bouton Détails -->
+  <button class="btn detail-btn" [routerLink]="['/suggestions', s.id]">
+    Détails
+  </button>
+</div>
+
+      
     </div>
   </div>
 

@@ -156,3 +156,16 @@ h2 {
   justify-content: center;
 }
 
+.detail-btn {
+  background-color: #4ca8af;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.detail-btn:hover {
+  background-color: #45a049;
+}

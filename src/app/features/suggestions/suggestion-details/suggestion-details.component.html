@@ -1,0 +1,27 @@
+<div class="suggestion-details" *ngIf="suggestion">
+  <h2>{{ suggestion.title }}</h2>
+  <span class="status" [ngClass]="{
+    'accepted': suggestion.status === 'acceptee',
+    'refused': suggestion.status === 'refusee',
+    'pending': suggestion.status === 'en_attente'
+  }">{{ suggestion.status }}</span>
+
+  <p>{{ suggestion.description }}</p>
+
+  <p><strong>Catégorie:</strong> {{ suggestion.category }}</p>
+  <p><strong>Date:</strong> {{ suggestion.date | date:'yyyy-MM-dd' }}</p>
+  <p><strong>Likes:</strong> {{ suggestion.likes }}</p>
+  <p *ngIf="suggestion.favorite">⭐ Favori</p>
+
+  <button *ngIf="suggestion.status !== 'refusee'" (click)="likeSuggestion(suggestion)">Like</button>
+  <button *ngIf="suggestion.status !== 'refusee'" (click)="addToFavorites(suggestion)" [disabled]="suggestion.favorite">
+    {{ suggestion.favorite ? 'Favori ajouté' : 'Ajouter aux favoris' }}
+  </button>
+
+  <br /><br />
+  <button (click)="goBack()">⬅ Retour à la liste</button>
+</div>
+
+<div *ngIf="!suggestion">
+  <p>Suggestion introuvable.</p>
+</div>
