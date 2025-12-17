@@ -1,0 +1,64 @@
+/* Container padding */
+.container {
+  max-width: 700px;
+}
+
+/* Card styling */
+.card {
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+/* Form label */
+.form-label {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Input and textarea */
+.form-control, .form-select {
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 0.95rem;
+  border: 1px solid #ced4da;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #198754; /* Bootstrap green */
+  box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
+}
+
+/* Validation messages */
+.invalid-feedback {
+  font-size: 0.85rem;
+}
+
+/* Buttons */
+.btn-success {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+}
+
+.btn-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+}
+
+/* Icons spacing */
+.btn i {
+  font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@m

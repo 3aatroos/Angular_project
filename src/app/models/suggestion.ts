@@ -7,4 +7,5 @@ export interface Suggestion {
   status: string;     
   likes?: number;      
   favorite?: boolean;  
+  nbLikes?: number;
 }

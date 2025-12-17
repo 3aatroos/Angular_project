@@ -41,7 +41,11 @@
   <div class="favorites">
     <h3>Favorites:</h3>
     <ul>
+      <button routerLink="/suggestions/add" class="btn add-btn">
+  ➕ Ajouter suggestion
+</button>
       <li *ngFor="let f of favorites">{{ f.title }}</li>
     </ul>
   </div>
+  
 </div>
